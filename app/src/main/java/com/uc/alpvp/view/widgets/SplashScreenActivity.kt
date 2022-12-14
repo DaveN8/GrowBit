@@ -86,7 +86,6 @@ fun Splash(alpha: Float){
             modifier = Modifier
                 .alpha(alpha = alpha)
                 .size(1000.dp)
-                .zIndex(1f),
         )
     }
 }
