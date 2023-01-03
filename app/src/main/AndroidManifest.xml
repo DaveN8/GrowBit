@@ -26,7 +26,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.input"
+            android:name=".view.inputtodo"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

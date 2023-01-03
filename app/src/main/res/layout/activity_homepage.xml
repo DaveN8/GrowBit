@@ -9,12 +9,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cardtodo"
-        android:layout_width="376dp"
-        android:layout_height="99dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

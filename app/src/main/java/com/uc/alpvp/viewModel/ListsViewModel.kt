@@ -6,27 +6,27 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uc.alpvp.model.Data
-import com.uc.alpvp.repository.ProductsRepository
+import com.uc.alpvp.repository.ListsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductsViewModel @Inject constructor(private val repository: ProductsRepository): ViewModel() {
+class ListsViewModel @Inject constructor(private val repository: ListsRepository): ViewModel() {
 
-    // get products data
-    val _products: MutableLiveData<ArrayList<Data>> by lazy {
+    // get lists data
+    val _lists: MutableLiveData<ArrayList<Data>> by lazy {
         MutableLiveData<ArrayList<Data>>()
     }
 
-    val products: LiveData<ArrayList<Data>>
-    get() = _products
+    val lists: LiveData<ArrayList<Data>>
+    get() = _lists
 
-    fun getProducts() = viewModelScope.launch {
-        repository.getProductsData().let {
-            response ->
+    fun getLists() = viewModelScope.launch {
+        repository.getListsData().let {
+            response->
             if (response.isSuccessful){
-                _products.postValue(response.body()?.data as ArrayList<Data>?)
+                _lists.postValue(response.body()?.data as ArrayList<Data>?)
             }else{
                 Log.e("Get Data", "Failed")
             }
