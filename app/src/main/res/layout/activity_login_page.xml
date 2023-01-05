@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@+id/loginscrn" />
 
         <EditText
-            android:id="@+id/tv_username"
+            android:id="@+id/ipt_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -56,10 +56,10 @@
             android:layout_marginTop="8dp"
             android:text="Password"
             app:layout_constraintStart_toStartOf="@+id/fstTxt"
-            app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+            app:layout_constraintTop_toBottomOf="@+id/ipt_email" />
 
         <EditText
-            android:id="@+id/tv_password"
+            android:id="@+id/ipt_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -70,14 +70,14 @@
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:backgroundTint="#8704CA5F"
             android:text="Login"
-            app:layout_constraintStart_toStartOf="@+id/tv_password"
-            app:layout_constraintTop_toBottomOf="@+id/tv_password" />
+            app:layout_constraintStart_toStartOf="@+id/ipt_pass"
+            app:layout_constraintTop_toBottomOf="@+id/ipt_pass" />
 
         <TextView
             android:id="@+id/lnkRegister"
@@ -91,5 +91,5 @@
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 </androidx.constraintlayout.widget.ConstraintLayout>

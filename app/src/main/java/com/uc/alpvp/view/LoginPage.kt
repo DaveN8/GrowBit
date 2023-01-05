@@ -25,7 +25,7 @@ class LoginPage : AppCompatActivity() {
         setContentView(bain.root)
 
         checkLogin()
-
+        goToReg()
     }
     private fun checkLogin(){
         bain.btnLogin.setOnClickListener(){
@@ -54,6 +54,13 @@ class LoginPage : AppCompatActivity() {
 
                 }
             })
+        }
+    }
+
+    private fun goToReg(){
+        bain.lnkRegister.setOnClickListener(){
+
+        startActivity(Intent(this, register_page::class.java))
         }
     }
 }

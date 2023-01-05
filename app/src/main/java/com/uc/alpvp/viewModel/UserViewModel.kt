@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uc.alpvp.model.Data
 import com.uc.alpvp.model.DataX
+import com.uc.alpvp.model.GetInputRegister
 import com.uc.alpvp.model.User
 import com.uc.alpvp.repository.ListsRepository
 import com.uc.alpvp.repository.UsersRepository
@@ -30,7 +31,7 @@ class UserViewModel @Inject constructor(private val repository: UsersRepository)
     val regis: LiveData<User>
         get() = _regis
 
-    fun createUser(Users: DataX) = viewModelScope.launch {
+    fun createUser(Users: GetInputRegister) = viewModelScope.launch {
     repository.register(Users).let { response ->
         if (response.isSuccessful){
                 _regis.postValue(
