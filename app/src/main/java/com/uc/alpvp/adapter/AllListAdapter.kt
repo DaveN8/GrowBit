@@ -5,6 +5,7 @@ import android.renderscript.ScriptGroup.Input
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +25,7 @@ class AllListAdapter(private val dataSet: ArrayList<Data>) :
             val tvNote: TextView
             val tvDate: TextView
             val cvList: CardView
+//            val btnAdd: Button
 
             init {
                 // Define click listener for the ViewHolder's View.
@@ -31,6 +33,7 @@ class AllListAdapter(private val dataSet: ArrayList<Data>) :
                 tvNote = view.findViewById(R.id.tv_note_list)
                 tvDate = view.findViewById(R.id.tv_date_list)
                 cvList = view.findViewById(R.id.cv_lists)
+//                btnAdd = view.findViewById(R.id.btn_cardtodo)
 
             }
         }

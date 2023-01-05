@@ -1,11 +1,15 @@
 package com.uc.alpvp.viewModel
 
 import android.util.Log
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uc.alpvp.model.Data
+import com.uc.alpvp.model.GetInput
 import com.uc.alpvp.repository.ListsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -13,6 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListsViewModel @Inject constructor(private val repository: ListsRepository): ViewModel() {
+
+    var deta by mutableStateOf(GetInput())
 
     // get lists data
     val _lists: MutableLiveData<ArrayList<Data>> by lazy {
@@ -31,5 +37,15 @@ class ListsViewModel @Inject constructor(private val repository: ListsRepository
                 Log.e("Get Data", "Failed")
             }
         }
+    }
+
+    fun createList() = viewModelScope.launch {
+        repository.createListsData(
+            list_title = deta.title,
+            list_desc = deta.description,
+            list_note = deta.note,
+            list_set_time = deta.set_time,
+            list_set_date = deta.set_date
+        )
     }
 }

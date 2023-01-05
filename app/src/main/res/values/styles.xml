@@ -6,7 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="titleTextColor">@color/textColorPrimary</item>
-        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+<!--        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>-->
         <item name="searchViewStyle">@style/AppTheme.SearchView</item>
     </style>
 
@@ -33,7 +33,7 @@
         <item name="android:paddingBottom">@dimen/_10sdp</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">@dimen/font_size_medium</item>
-        <item name="android:background">@drawable/bg_ractangle_rounded_inactive</item>
+<!--        <item name="android:background">@drawable/bg_ractangle_rounded_inactive</item>-->
         <item name="android:gravity">center_vertical</item>
     </style>
 
@@ -46,7 +46,7 @@
         <item name="android:paddingEnd">@dimen/spacing_standard</item>
         <item name="android:theme">@style/Theme.MaterialComponents.Light</item>
         <item name="cornerRadius">@dimen/spacing_xlarge</item>
-        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>-->
     </style>
 
     <style name="MaterialButtonStyle.Filled">
@@ -71,20 +71,20 @@
     <style name="CatIcon">
         <item name="android:layout_width">@dimen/_30sdp</item>
         <item name="android:layout_height">@dimen/_30sdp</item>
-        <item name="android:background">@drawable/bg_circle_primary_light</item>
+<!--        <item name="android:background">@drawable/bg_circle_primary_light</item>-->
         <item name="android:padding">@dimen/spacing_standard</item>
     </style>
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/black</item>
-        <item name="icon">@drawable/ic_profile</item>
+<!--        <item name="icon">@drawable/ic_profile</item>-->
     </style>
 
     <style name="CatText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/font_size_small</item>
-        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>-->
     </style>
 
     <style name="Heading">
@@ -92,7 +92,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">@dimen/font_size_medium</item>
-        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>-->
         <item name="android:layout_centerVertical">true</item>
     </style>
 
@@ -110,7 +110,7 @@
         <item name="android:textSize">@dimen/font_size_small</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>
+<!--        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>-->
 
     </style>
 
@@ -119,15 +119,15 @@
         <item name="android:textSize">@dimen/font_size_small</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>
+<!--        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>-->
         <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="android:drawablePadding">@dimen/spacing_standard</item>
         <item name="android:padding">@dimen/spacing_standard</item>
-        <item name="android:drawableEnd">@drawable/ic_keyboard_arrow_right_black</item>
+<!--        <item name="android:drawableEnd">@drawable/ic_keyboard_arrow_right_black</item>-->
         <item name="android:layout_marginStart">@dimen/spacing_standard_new</item>
         <item name="android:layout_marginEnd">@dimen/spacing_standard_new</item>
         <item name="android:layout_marginTop">@dimen/spacing_middle</item>
-        <item name="android:background">@drawable/bg_ractangal_stroked</item>
+<!--        <item name="android:background">@drawable/bg_ractangal_stroked</item>-->
         <item name="android:gravity">center_vertical</item>
     </style>
 
@@ -143,12 +143,12 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:drawableEnd">@drawable/ic_star_black</item>
+<!--        <item name="android:drawableEnd">@drawable/ic_star_black</item>-->
         <item name="android:drawablePadding">@dimen/spacing_control</item>
         <item name="android:drawableTint" tools:targetApi="m">@color/yellow</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">@dimen/font_size_small</item>
-        <item name="fontPath">fonts/Montserrat-Medium.ttf</item>
+<!--        <item name="fontPath">fonts/Montserrat-Medium.ttf</item>-->
     </style>
 
     <style name="RatingSeekBar">
@@ -175,7 +175,7 @@
         <item name="android:layout_weight">2</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textAlignment">center</item>
-        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>
+<!--        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>-->
         <item name="android:padding">@dimen/spacing_medium</item>
         <item name="android:background">@color/more_infoHeading_background</item>
     </style>
@@ -186,7 +186,7 @@
         <item name="android:layout_weight">3</item>
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>
+<!--        <item name="fontPath">fonts/Montserrat-SemiBold.ttf</item>-->
         <item name="android:padding">@dimen/spacing_medium</item>
         <item name="android:paddingStart">@dimen/spacing_mxlarge</item>
         <item name="android:background">@color/more_infoValue_background</item>
@@ -202,8 +202,8 @@
         <item name="android:paddingTop">@dimen/spacing_medium</item>
         <item name="android:paddingBottom">@dimen/spacing_medium</item>
         <item name="android:textSize">@dimen/font_size_small</item>
-        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>
-        <item name="android:background">@drawable/bg_ractangle_rounded</item>
+<!--        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>-->
+<!--        <item name="android:background">@drawable/bg_ractangle_rounded</item>-->
     </style>
 
     <style name="OrderTextView">
@@ -212,7 +212,7 @@
         <item name="android:layout_marginTop">@dimen/spacing_control</item>
         <item name="android:textColor">@color/textColorSecondary</item>
         <item name="android:textSize">@dimen/font_size_small</item>
-        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>-->
     </style>
 
     <style name="RatingBar" parent="Theme.AppCompat">
@@ -228,9 +228,9 @@
         <item name="android:layout_marginEnd">@dimen/spacing_standard_new</item>
         <item name="android:layout_marginBottom">@dimen/spacing_middle</item>
         <item name="android:textSize">@dimen/font_size_medium</item>
-        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>-->
         <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="android:background">@drawable/bg_rectangle_order</item>
+<!--        <item name="android:background">@drawable/bg_rectangle_order</item>-->
         <item name="android:drawablePadding">@dimen/spacing_standard</item>
         <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
@@ -242,7 +242,7 @@
         <item name="android:padding">@dimen/_14sdp</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/font_size_small</item>
-        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>-->
     </style>
 
     <style name="BottomButton.White">
@@ -270,7 +270,7 @@
         <item name="android:textSize">@dimen/font_size_medium</item>
         <item name="android:layout_marginTop">@dimen/spacing_control_half</item>
         <item name="android:singleLine">true</item>
-        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>-->
 
     </style>
 
@@ -292,7 +292,7 @@
     </style>
 
     <style name="tabLayout" parent="@android:style/TextAppearance.Widget.TabWidget">
-        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>-->
     </style>
 
     <style name="CollapsingTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -302,15 +302,15 @@
     </style>
 
     <style name="FontMedium">
-        <item name="fontPath">fonts/Montserrat-Medium.ttf</item>
+<!--        <item name="fontPath">fonts/Montserrat-Medium.ttf</item>-->
     </style>
 
     <style name="FontSemiBold">
-        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-SemiBold.ttf"</item>-->
     </style>
 
     <style name="FontBold">
-        <item name="fontPath">"fonts/Montserrat-Bold.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-Bold.ttf"</item>-->
     </style>
 
     <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
@@ -319,15 +319,15 @@
     </style>
 
     <style name="AppTheme.SearchView" parent="Widget.AppCompat.SearchView">
-        <item name="searchIcon">@drawable/ic_search</item>
-        <item name="closeIcon">@drawable/ic_close_black</item>
+<!--        <item name="searchIcon">@drawable/ic_search</item>-->
+<!--        <item name="closeIcon">@drawable/ic_close_black</item>-->
         <item name="queryBackground">@null</item>
     </style>
 
     <style name="FieldRounded">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/bg_ractangle_rounded_stroke</item>
+<!--        <item name="android:background">@drawable/bg_ractangle_rounded_stroke</item>-->
         <item name="android:textColor">@color/textColorPrimary</item>
         <item name="android:textSize">@dimen/font_size_medium</item>
         <item name="android:padding">@dimen/spacing_middle</item>
@@ -358,7 +358,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/bg_rounded_border_edittext</item>
+<!--        <item name="android:background">@drawable/bg_rounded_border_edittext</item>-->
         <item name="android:imeOptions">actionNext</item>
         <item name="android:inputType">number</item>
         <item name="android:letterSpacing">0.2</item>
@@ -375,7 +375,7 @@
         <item name="android:textColor">@color/textColorSecondary</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/font_size_normal</item>
-        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>
+<!--        <item name="fontPath">"fonts/Montserrat-Medium.ttf"</item>-->
 
     </style>
 

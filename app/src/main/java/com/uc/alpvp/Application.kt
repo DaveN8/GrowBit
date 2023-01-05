@@ -1,4 +1,4 @@
-package com.uc.alpvp.view
+package com.uc.alpvp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
