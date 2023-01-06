@@ -39,13 +39,37 @@ class ListsViewModel @Inject constructor(private val repository: ListsRepository
         }
     }
 
+    // get lists data by id
+    val _listsbyid: MutableLiveData<ArrayList<Data>> by lazy {
+        MutableLiveData<ArrayList<Data>>()
+    }
+
+    val listsbyid: LiveData<ArrayList<Data>>
+        get() = _listsbyid
+
+    fun getListsbyId(u_id: Int) = viewModelScope.launch {
+        repository.getListsbyId(u_id).let {
+                response->
+            if (response.isSuccessful){
+                _listsbyid.postValue(response.body()?.data as ArrayList<Data>)
+            }else{
+                Log.e("Get Data", "Failed")
+            }
+        }
+    }
+
+    fun deleteLis(l_id: Int) = viewModelScope.launch {
+        repository.deleteLis(l_id)
+    }
+
     fun createList() = viewModelScope.launch {
         repository.createListsData(
             list_title = deta.title,
             list_desc = deta.description,
             list_note = deta.note,
             list_set_time = deta.set_time,
-            list_set_date = deta.set_date
+            list_set_date = deta.set_date,
+            list_user_id = deta.user_id
         )
     }
 }

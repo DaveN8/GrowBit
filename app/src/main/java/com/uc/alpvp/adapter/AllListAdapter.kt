@@ -11,7 +11,9 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.uc.alpvp.R
 import com.uc.alpvp.model.Data
+import com.uc.alpvp.retrofit.Listener
 import com.uc.alpvp.view.inputtodo
+import com.uc.alpvp.viewModel.ListsViewModel
 
 class AllListAdapter(private val dataSet: ArrayList<Data>) :
             RecyclerView.Adapter<AllListAdapter.ViewHolder>() {
@@ -20,6 +22,8 @@ class AllListAdapter(private val dataSet: ArrayList<Data>) :
          * Provide a reference to the type of views that you are using
          * (custom ViewHolder).
          */
+        private lateinit var viewModel: ListsViewModel
+
         class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val tvTitle: TextView
             val tvNote: TextView
@@ -36,6 +40,7 @@ class AllListAdapter(private val dataSet: ArrayList<Data>) :
 //                btnAdd = view.findViewById(R.id.btn_cardtodo)
 
             }
+
         }
 
         // Create new views (invoked by the layout manager)
@@ -56,9 +61,10 @@ class AllListAdapter(private val dataSet: ArrayList<Data>) :
             viewHolder.tvNote.text = dataSet[position].note
             viewHolder.tvDate.text = dataSet[position].set_date
             viewHolder.cvList.setOnClickListener{
-                val intent = Intent(it.context, inputtodo::class.java)
-                intent.putExtra("list_id", dataSet[position].id)
-                it.context.startActivity(intent)
+//                val intent = Intent(it.context, inputtodo::class.java)
+//                intent.putExtra("list_id", dataSet[position].id)
+//                it.context.startActivity(intent)
+                viewModel.deleteLis(dataSet[position].id.toInt())
             }
         }
 

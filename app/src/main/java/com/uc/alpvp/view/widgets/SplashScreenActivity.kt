@@ -26,6 +26,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import coil.decode.ImageSource
+import com.bumptech.glide.Glide
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.google.android.material.snackbar.Snackbar
@@ -85,12 +86,12 @@ fun Splash(alpha: Float){
         .fillMaxSize(),
         contentAlignment = Alignment.Center
     ){
-        GlideImage(
-            model = "https://drive.google.com/file/d/1fhKPWvBbpiA6e3HsrHRg9YiAoJiH_e9k/view?usp=sharing",
-            contentDescription = null,
-            modifier = Modifier
-                .alpha(alpha = alpha)
-                .size(100.dp)
-        )
+//        GlideImage(
+//            model = ,
+//            contentDescription = null,
+//            modifier = Modifier
+//                .alpha(alpha = alpha)
+//                .size(1000.dp)
+//        )
     }
 }

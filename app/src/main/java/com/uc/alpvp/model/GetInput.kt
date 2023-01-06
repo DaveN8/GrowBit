@@ -6,4 +6,5 @@ data class GetInput(
     val set_date: String = "",
     val set_time: String = "",
     val title: String = "",
+    val user_id: String = ""
 )

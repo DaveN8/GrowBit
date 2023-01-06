@@ -23,51 +23,54 @@ class register_page : AppCompatActivity() {
         setContentView(bain.root)
         supportActionBar?.hide()
 
+        bain.btnRegister.setOnClickListener() {
+            checkForm()
+        }
         getToLog()
-        checkForm()
+
     }
 
     private fun checkForm(){
-        var iscompeted: Boolean = true
 
-        val email = bain.iptEmail.text.toString().trim()
-        val username = bain.iptUname.text.toString().trim()
-        val pass = bain.iptPass.text.toString().trim()
+            var iscompeted: Boolean = true
 
-        val users = GetInputRegister(
-            email,
-            pass,
-            username
-        )
+            var email = bain.iptEmail.editText?.text.toString().trim()
+            var username = bain.iptUname.editText?.text.toString().trim()
+            var pass = bain.iptPassw.editText?.text.toString().trim()
 
-        if (users.email!!.isEmpty()){
-            bain.iptEmail.error = "Email required"
-            iscompeted = false
-        }else{
-            bain.iptEmail.error = ""
-        }
+            val users = GetInputRegister(
+                email,
+                pass,
+                username
+            )
 
-        if (users.password!!.isEmpty()){
-            bain.iptPass.error = "Password Required"
-            iscompeted = false
-        }else{
-            bain.iptPass.error = ""
-        }
+            if (users.username!!.isEmpty()) {
+                bain.iptUname.error = "Username required"
+                iscompeted = false
+            } else {
+                bain.iptUname.error = ""
+            }
 
-        if (users.username!!.isEmpty()){
-            bain.iptUname.error = "Username required"
-            iscompeted = false
-        }else{
-            bain.iptUname.error = ""
-        }
+            if (users.email!!.isEmpty()) {
+                bain.iptEmail.error = "Email required"
+                iscompeted = false
+            } else {
+                bain.iptEmail.error = ""
+            }
 
-        if (iscompeted){
-            viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-            viewModel.createUser(users)
-        }
+            if (users.password!!.isEmpty()) {
+                bain.iptPassw.error = "Password Required"
+                iscompeted = false
+            } else {
+                bain.iptPassw.error = ""
+            }
 
-        pindah()
+            if (iscompeted) {
+                viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+                viewModel.createUser(users)
 
+                pindah()
+            }
     }
 
     private fun getToLog(){
@@ -77,6 +80,6 @@ class register_page : AppCompatActivity() {
     }
 
     private fun pindah(){
-        startActivity(Intent(this, homepage::class.java))
+        startActivity(Intent(this, LoginPage::class.java))
     }
 }

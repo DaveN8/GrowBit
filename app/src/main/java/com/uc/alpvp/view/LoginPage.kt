@@ -29,37 +29,61 @@ class LoginPage : AppCompatActivity() {
     }
     private fun checkLogin(){
         bain.btnLogin.setOnClickListener(){
-            var uname = bain.tvUsername.text.toString().trim()
-            var passw = bain.tvPassword.text.toString().trim()
-            viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-            viewModel.Login(uname,passw).enqueue(object : retrofit2.Callback<GetInputLogin>{
+            var uname = bain.iptUsername.text.toString().trim()
+            var passw = bain.iptPass.text.toString().trim()
 
-                override fun onResponse(
-                    call: retrofit2.Call<GetInputLogin>,
-                    response: retrofit2.Response<GetInputLogin>
-                ) {
-                    if (response.isSuccessful){
-                        val intent = Intent(this@LoginPage, homepage::class.java)
-                        Toast.makeText(this@LoginPage, response.body()?.id, Toast.LENGTH_SHORT).show()
-                        intent.putExtra("user_id", response.body()?.id?.toIntOrNull())
-                        startActivity(intent)
-                        Toast.makeText(this@LoginPage, "Login Successful", Toast.LENGTH_SHORT).show()
-                        finish()
-                    }else{
-                        Toast.makeText(this@LoginPage, "Username/Password is Wrong!", Toast.LENGTH_SHORT).show()
+            var iscompeted: Boolean = true
+
+            if (bain.iptUsername.text.isEmpty()){
+                bain.iptUsername.error = "Username Required"
+                iscompeted = false
+            }else{
+                bain.iptUsername.error = ""
+            }
+
+            if (bain.iptPass.text.isEmpty()){
+                bain.iptPass.error = "Password Required"
+                iscompeted = false
+            }else{
+                bain.iptPass.error = ""
+            }
+
+            if (iscompeted) {
+
+                viewModel = ViewModelProvider(this@LoginPage).get(UserViewModel::class.java)
+                viewModel.Login(uname, passw).enqueue(object : retrofit2.Callback<GetInputLogin> {
+                    override fun onResponse(
+                        call: Call<GetInputLogin>,
+                        response: Response<GetInputLogin>
+                    ) {
+                        if (response.isSuccessful) {
+                            val intent = Intent(this@LoginPage, homepage::class.java)
+//                            Toast.makeText(this@LoginPage, response.body()?.id, Toast.LENGTH_SHORT)
+//                                .show()
+                            intent.putExtra("user_id", response.body()?.id?.toInt())
+                            startActivity(intent)
+                            Toast.makeText(this@LoginPage, "Login Successful", Toast.LENGTH_SHORT)
+                                .show()
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                this@LoginPage,
+                                "Username/Password is Wrong!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                }
 
-                override fun onFailure(call: Call<GetInputLogin>, t: Throwable) {
+                    override fun onFailure(call: Call<GetInputLogin>, t: Throwable) {
 
-                }
-            })
+                    }
+                })
+            }
         }
     }
 
     private fun goToReg(){
         bain.lnkRegister.setOnClickListener(){
-
         startActivity(Intent(this, register_page::class.java))
         }
     }

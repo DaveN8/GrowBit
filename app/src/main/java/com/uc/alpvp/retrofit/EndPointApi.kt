@@ -9,17 +9,28 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface EndPointApi {
     //lists
     @GET("lists")
     suspend fun getLists():Response<Lists>
+
+    @GET("lists/{listid}")
+    suspend fun getListsbyId(@Path("listid") listid: Int): Response<Lists>
+
     @POST("lists/create")
     suspend fun createLists(@Body body: RequestBody?): ResponseBody?
+
+    @FormUrlEncoded
+    @DELETE("ldelete/{id}")
+    suspend fun deletelist(@Path("id") id: Int): Response<Lists>
 
     //user
     @FormUrlEncoded

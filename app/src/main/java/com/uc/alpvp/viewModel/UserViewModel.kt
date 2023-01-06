@@ -31,8 +31,8 @@ class UserViewModel @Inject constructor(private val repository: UsersRepository)
     val regis: LiveData<User>
         get() = _regis
 
-    fun createUser(Users: GetInputRegister) = viewModelScope.launch {
-    repository.register(Users).let { response ->
+    fun createUser(users: GetInputRegister) = viewModelScope.launch {
+    repository.register(users).let { response ->
         if (response.isSuccessful){
                 _regis.postValue(
                     response.body() as User

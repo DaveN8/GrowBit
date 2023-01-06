@@ -9,6 +9,8 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import com.uc.alpvp.R
 import com.uc.alpvp.databinding.ActivityInputtodoBinding
+import com.uc.alpvp.model.Data
+import com.uc.alpvp.view.homepage.Companion.user_id
 import com.uc.alpvp.viewModel.ListsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
@@ -26,12 +28,13 @@ class inputtodo : AppCompatActivity() {
         bain = ActivityInputtodoBinding.inflate(layoutInflater)
         setContentView(bain.root)
 
-        val listId = intent.getIntArrayExtra("list_id")
+        val listId = intent.getIntExtra("list_id", 0)
 
-        if (listId != null){
-            bain.toolbar.title = "Edit List"
+
+        if (listId == 0){
+            bain.toolbar.setTitle("Edit Title")
         }else{
-            bain.toolbar.title = "Add List"
+            bain.toolbar.setTitle("Add List")
             setupListener()
         }
 
@@ -60,19 +63,32 @@ class inputtodo : AppCompatActivity() {
         val li_date = date_format.format(date)
         val time = SimpleDateFormat("HH:mm")
         val li_time = time.format(set_time)
+        val li_u_id = intent.getIntExtra("user_id", 0)
 
-        viewModel.deta = viewModel.deta.copy(
-            title = li_title,
-            description = li_desc,
-            note = li_note,
-            set_time = li_time,
-            set_date = li_date
-        )
+        var iscompeted: Boolean = true
+
+            if (li_title.isEmpty()){
+                bain.iptTitle.error = "Title Required"
+                iscompeted = false
+            }else{
+                bain.iptTitle.error = ""
+            }
 
 
+        if (iscompeted) {
+            viewModel.deta = viewModel.deta.copy(
+                title = li_title,
+                description = li_desc,
+                note = li_note,
+                set_time = li_time,
+                set_date = li_date,
+                user_id = li_u_id.toString().trim()
+            )
             viewModel.createList()
-            startActivity(Intent(this, homepage::class.java))
+            startActivity(Intent(this, homepage::class.java).putExtra("user_id", li_u_id))
             finish()
+        }
+
         }
     }
 
